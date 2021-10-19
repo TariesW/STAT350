@@ -1,0 +1,46 @@
+> life = c(38.6,14,69,27,19,28,50,30,40,28,20,3.9,39.3,41,16.2,9,7.6,46,22.4,24,100,3.2,27,18,13.7,4.7,9.8,29,20,3)
+> body = c(6654,3.385,2547,10.55,0.023,3.3,52.16,46,5187.1,529,27.66,0.12,207,85,36.33,0.101,1.04,521,100,0.01,62,0.023,192,2.5,4.288,0.28,4.235,6.8,55.5,3.5)
+> body1 = log(body)
+> body1
+ [1]  8.80297346  1.21935391  7.84267147  2.35612586 -3.77226106  1.19392247
+ [7]  3.95431592  3.82864140  8.55393005  6.27098843  3.31998733 -2.12026354
+[13]  5.33271879  4.44265126  3.59264385 -2.29263476  0.03922071  6.25575004
+[19]  4.60517019 -4.60517019  4.12713439 -3.77226106  5.25749537  0.91629073
+[25]  1.45582042 -1.27296568  1.44338333  1.91692261  4.01638302  1.25276297
+> lot(body1,life)
+Error: could not find function "lot"
+> plot(body1,life)
+> result = lm(life~body1)
+> result
+
+Call:
+lm(formula = life ~ body1)
+
+Coefficients:
+(Intercept)        body1  
+     18.279        3.412  
+
+> plot(body1,result$res)
+> qqnorm(result$res)
+> qqline(result$res)
+> summary(result)
+
+Call:
+lm(formula = life ~ body1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-19.553  -9.688  -5.275   5.281  67.639 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  18.2785     3.8245   4.779 5.07e-05 ***
+body1         3.4121     0.8893   3.837  0.00065 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 17.14 on 28 degrees of freedom
+Multiple R-squared:  0.3446,	Adjusted R-squared:  0.3212 
+F-statistic: 14.72 on 1 and 28 DF,  p-value: 0.0006498
+
+> 
