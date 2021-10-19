@@ -1,0 +1,35 @@
+> data = matrix(c(9,4,3,6,22,8,10,8,5,31,7,2,5,5,19,7,9,12,16,44,4,14,10,9,37,11,9,13,12,45,46,48,51,53,198), ncol = 5, byrow=TRUE)
+> data = as.table(data)
+> data
+    A   B   C   D   E
+A   9   4   3   6  22
+B   8  10   8   5  31
+C   7   2   5   5  19
+D   7   9  12  16  44
+E   4  14  10   9  37
+F  11   9  13  12  45
+G  46  48  51  53 198
+> barchart(data)
+Error: could not find function "barchart"
+> barplox(data)
+Error: could not find function "barplox"
+> barplot(data)
+> data = matrix(c(9,4,3,6,8,10,8,5,7,2,5,5,7,9,12,16,4,14,10,9,11,9,13,12), ncol = 4, byrow=TRUE)
+> 
+> data = as.table(data)
+> data
+   A  B  C  D
+A  9  4  3  6
+B  8 10  8  5
+C  7  2  5  5
+D  7  9 12 16
+E  4 14 10  9
+F 11  9 13 12
+> barplot(data)
+> barplot(data,main=)
+> barplot(data,main="number of M&M per color",xlab="Color",ylab="number counted")
+> barplot(data,main="number of M&M per color",xlab="Color",ylab="number counted",col=c("brown","yellow","red","blue","orange","green"))
+> barplot(data,main="number of M&M per person",xlab="Color",ylab="number counted",col=c("brown","yellow","red","blue","orange","green"))
+> barplot(data,main="number of M&M per person",xlab="Person",ylab="number counted",col=c("brown","yellow","red","blue","orange","green"))
+> 
+> 

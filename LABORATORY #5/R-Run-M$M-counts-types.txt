@@ -1,0 +1,77 @@
+> data2 = matrix(c(22,10,31,17,19,15,44,16,37,24,45,19))
+> data2 = as.table(data2)
+> data2
+   A
+A 22
+B 10
+C 31
+D 17
+E 19
+F 15
+G 44
+H 16
+I 37
+J 24
+K 45
+L 19
+> data2 = matrix(c(22,10,31,17,19,15,44,16,37,24,45,19), ncol=2,byrow=True)
+Error in matrix(c(22, 10, 31, 17, 19, 15, 44, 16, 37, 24, 45, 19), ncol = 2,  : 
+  object 'True' not found
+> data2 = matrix(c(22,10,31,17,19,15,44,16,37,24,45,19),nocl=2,byrow=TRUE)
+Error in matrix(c(22, 10, 31, 17, 19, 15, 44, 16, 37, 24, 45, 19), nocl = 2,  : 
+  unused argument (nocl = 2)
+> data2 = matrix(c(22,10,31,17,19,15,44,16,37,24,45,19),ncol=2,byrow=TRUE)
+> data2 =as.table(data2)
+> data2
+   A  B
+A 22 10
+B 31 17
+C 19 15
+D 44 16
+E 37 24
+F 45 19
+> barplot(data2,main="number of M&M in differnt types",xlab="Type",ylab="number counted",col=c("brown","yellow","red","blue","orange","green"))
+2016-04-28 15:04:44.249 R[47449:730260] Communications error: <OS_xpc_error: <error: 0x7fff75912b90> { count = 1, contents =
+	"XPCErrorDescription" => <string: 0x7fff75912f40> { length = 22, contents = "Connection interrupted" }
+}>
+> t(data2)
+   A  B  C  D  E  F
+A 22 31 19 44 37 45
+B 10 17 15 16 24 19
+> data3<-t(data2)
+> barplot(data3,main="number of M&M in differnt types",xlab="Type",ylab="number counted",col=c("brown","yellow","red","blue","orange","green"))
+> temp<-data2
+> colnames(temp)
+[1] "A" "B"
+> colnames(temp)<- c('one, 'two'')
+Error: unexpected symbol in "colnames(temp)<- c('one, 'two"
+> colnames(temp)<- c('one, 'two')
+Error: unexpected symbol in "colnames(temp)<- c('one, 'two"
+> colnames(temp)<- c('one', 'two')
+> temp
+  one two
+A  22  10
+B  31  17
+C  19  15
+D  44  16
+E  37  24
+F  45  19
+> temp=data2
+> colbames(temp)
+Error: could not find function "colbames"
+> conames(temp)
+Error: could not find function "conames"
+> colnames(temp)
+[1] "A" "B"
+> colnames(temp)=c('Plain','Peanut')
+> temp
+  Plain Peanut
+A    22     10
+B    31     17
+C    19     15
+D    44     16
+E    37     24
+F    45     19
+> barplot(temp,main="number of M&M in differnt types",xlab="Type",ylab="number counted",col=c("brown","yellow","red","blue","orange","green"))
+
+    
