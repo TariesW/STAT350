@@ -1,0 +1,146 @@
+> y = c(10,13,12,17,56,36,29,14,10,24,110,28,17,8,30,9,47,35,29,14,56,14,11,46,11,23,65,26,69,61,94,10,18,9,10,28,31,26,29,31,16)
+> x1 = c(213,91,453,454,412,80,434,136,207,368,3344,361,104,125,291,204,625,1064,699,381,775,181,46,44,391,462,1007,266,1692,347,343,337,275,641,721,137,96,197,379,35,569)
+> data = data.frame(x1,y)
+> attach(data)
+The following objects are masked _by_ .GlobalEnv:
+
+    x1, y
+
+The following objects are masked from data (pos = 3):
+
+    x1, y
+
+The following objects are masked from data (pos = 4):
+
+    x1, y
+
+The following objects are masked from data (pos = 5):
+
+    x1, y
+
+The following object is masked from data1 (pos = 6):
+
+    x1
+
+The following objects are masked from data (pos = 7):
+
+    x1, y
+
+The following objects are masked from data (pos = 8):
+
+    x1, y
+
+The following objects are masked from data (pos = 9):
+
+    x1, y
+
+> data
+     x1   y
+1   213  10
+2    91  13
+3   453  12
+4   454  17
+5   412  56
+6    80  36
+7   434  29
+8   136  14
+9   207  10
+10  368  24
+11 3344 110
+12  361  28
+13  104  17
+14  125   8
+15  291  30
+16  204   9
+17  625  47
+18 1064  35
+19  699  29
+20  381  14
+21  775  56
+22  181  14
+23   46  11
+24   44  46
+25  391  11
+26  462  23
+27 1007  65
+28  266  26
+29 1692  69
+30  347  61
+31  343  94
+32  337  10
+33  275  18
+34  641   9
+35  721  10
+36  137  28
+37   96  31
+38  197  26
+39  379  29
+40   35  31
+41  569  16
+> plot(data$x1,data$y)
+> cov(data)
+          x1         y
+x1 317502.89 8527.7201
+y    8527.72  550.9476
+> cor(data)
+          x1         y
+x1 1.0000000 0.6447687
+y  0.6447687 1.0000000
+> results=lm(y~x1)
+> results
+
+Call:
+lm(formula = y ~ x1)
+
+Coefficients:
+(Intercept)           x1  
+   17.61057      0.02686  
+
+> plot(x1,y)
+> abline(results)
+> plot(x1,results$res)
+> qqnorm(results$res)
+> qqline(results$res)
+> hist(results$res)
+> summary(results)
+
+Call:
+lm(formula = y ~ x1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-26.976 -12.968  -3.495   6.710  67.177 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 17.610574   3.691587   4.770 2.58e-05 ***
+x1           0.026859   0.005099   5.268 5.36e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 18.17 on 39 degrees of freedom
+Multiple R-squared:  0.4157,	Adjusted R-squared:  0.4007 
+F-statistic: 27.75 on 1 and 39 DF,  p-value: 5.363e-06
+
+> confint(results)
+                  2.5 %      97.5 %
+(Intercept) 10.14363536 25.07751339
+x1           0.01654568  0.03717175
+> help(plot)
+starting httpd help server ... done
+> plot(data$x1,data$y)
+> > plot(data$x1,data$y, ylab="SO2 level", xlab="Number of manufacturing enterprises employed",col="blue",main="scatter graph")
+Error: unexpected '>' in ">"
+> plot(data$x1,data$y, ylab="SO2 level", xlab="Number of manufacturing enterprises employed",col="blue",main="scatter graph")
+> 
+> plot(x1,y)
+> abline(results)
+> abline(results, ylab="SO2 level", xlab="Number of manufacturing enterprise employed",col=)
+Error in int_abline(a = a, b = b, h = h, v = v, untf = untf, ...) : 
+  argument is missing, with no default
+> abline(results, ylab="SO2 level", xlab="Number of manufacturing enterprise employed",col="blue",main="scatter plot with best fit line")
+> plot(data$x1,data$y, ylab="SO2 level", xlab="Number of manufacturing enterprises employed",col="blue",main="scatter graph")
+> abline(results)
+> plot(data$x1,data$y, ylab="SO2 level", xlab="Number of manufacturing enterprises employed",col="blue",main="scatter graph with best fit line")
+> abline(results)
+> 

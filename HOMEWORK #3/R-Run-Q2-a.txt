@@ -1,0 +1,119 @@
+> xa = c(10,8,13,9,11,14,6,4,12,7,5)
+> ya = c(8.04,6.95,7.58,8.81,8.33,9.96,7.24,4.26,10.84,4.82,5.68)
+> xb = c(10,8,13,9,11,14,6,4,12,7,5)
+> yb = c(9.14,8.14,8.74,8.77,9.26,8.1,6.13,3.1,9.13,7.26,4.74)
+> xc = c(10,8,13,9,11,14,6,4,12,7,5)
+> yc = c(7.46,6.77,12.74,7.11,7.81,8.84,6.08,5.39,8.15,6.42,5.73)
+> xd = c(8,8,8,8,8,8,8,8,8,8,19)
+> yd = c(6.58,5.76,7.71,8.84,8.47,7.04,5.25,5.56,7.91,6.89,12.5)
+> resulta = lm(xa~ya)
+> resulta
+
+Call:
+lm(formula = xa ~ ya)
+
+Coefficients:
+(Intercept)           ya  
+    -0.9975       1.3328  
+
+> cor(xa,ya)
+[1] 0.8164205
+> summary(resulta)
+
+Call:
+lm(formula = xa ~ ya)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.6522 -1.5117 -0.2657  1.2341  3.8946 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)   
+(Intercept)  -0.9975     2.4344  -0.410  0.69156   
+ya            1.3328     0.3142   4.241  0.00217 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 2.019 on 9 degrees of freedom
+Multiple R-squared:  0.6665,	Adjusted R-squared:  0.6295 
+F-statistic: 17.99 on 1 and 9 DF,  p-value: 0.00217
+
+> resultb = lm(xb~yb)
+> resultb
+
+Call:
+lm(formula = xb ~ yb)
+
+Coefficients:
+(Intercept)           yb  
+    -0.9948       1.3325  
+
+> cor(xb,yb)
+[1] 0.8162365
+> summary(resultb)
+
+Call:
+lm(formula = xb ~ yb)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.8516 -1.4315 -0.3440  0.8467  4.2017 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)   
+(Intercept)  -0.9948     2.4354  -0.408  0.69246   
+yb            1.3325     0.3144   4.239  0.00218 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 2.02 on 9 degrees of freedom
+Multiple R-squared:  0.6662,	Adjusted R-squared:  0.6292 
+F-statistic: 17.97 on 1 and 9 DF,  p-value: 0.002179
+
+> resultc = lm(xc~yc)
+> cor(xc,yc)
+[1] 0.8162867
+> summary(resultc)
+
+Call:
+lm(formula = xc ~ yc)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.9869 -1.3733 -0.0266  1.3200  3.2133 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)   
+(Intercept)  -1.0003     2.4362  -0.411  0.69097   
+yc            1.3334     0.3145   4.239  0.00218 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 2.019 on 9 degrees of freedom
+Multiple R-squared:  0.6663,	Adjusted R-squared:  0.6292 
+F-statistic: 17.97 on 1 and 9 DF,  p-value: 0.002176
+
+> resultd = lm(xd~yd)
+> cor(xd,yd)
+[1] 0.8165214
+> summary(resultd)
+
+Call:
+lm(formula = xd ~ yd)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.7859 -1.4122 -0.1853  1.4551  3.3329 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)   
+(Intercept)  -1.0036     2.4349  -0.412  0.68985   
+yd            1.3337     0.3143   4.243  0.00216 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 2.018 on 9 degrees of freedom
+Multiple R-squared:  0.6667,	Adjusted R-squared:  0.6297 
+F-statistic:    18 on 1 and 9 DF,  p-value: 0.002165
+
+> 
